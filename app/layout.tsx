@@ -1,14 +1,38 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
+// Production URL. Override with NEXT_PUBLIC_SITE_URL if the domain changes. Needed so the OG image URL is absolute.
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dinnnah-arthur-ugochukwu-portfolio.vercel.app";
+
+const TITLE = "Dinnah Arthur Ugochukwu — Graphic Designer";
+const DESCRIPTION =
+  "Creative graphic designer with 5 years of experience in branding, digital marketing assets and social media graphics. Selected work 2022–2026.";
+
 export const metadata: Metadata = {
-  title: "Dinnah Arthur Ugochukwu — Graphic Designer",
-  description:
-    "Creative graphic designer with 5 years of experience in branding, digital marketing assets and social media graphics. Selected work 2022–2026.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
   openGraph: {
-    title: "Dinnah Arthur Ugochukwu — Graphic Designer",
-    description: "Branding, social media graphics and print design. Selected work 2022–2026.",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/",
+    siteName: "Dinnah Arthur Ugochukwu",
     type: "website",
+    locale: "en_NG",
+    images: [
+      {
+        url: "/og-img.png", // put a 1200×630 file at public/og-img.png
+        width: 1200,
+        height: 630,
+        alt: "Dinnah Arthur Ugochukwu — Graphic Designer portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og-img.png"],
   },
 };
 
