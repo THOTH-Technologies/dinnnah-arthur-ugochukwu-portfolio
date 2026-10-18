@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: "en_NG",
     images: [
       {
-        url: "/og-img.png", // put a 1200×630 file at public/og-img.png
+        url: "/images/og-img.png", // put a 1200×630 file at public/og-img.png
         width: 1200,
         height: 630,
         alt: "Dinnah Arthur Ugochukwu — Graphic Designer portfolio",
