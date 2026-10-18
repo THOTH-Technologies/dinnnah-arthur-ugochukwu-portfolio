@@ -20,7 +20,7 @@ export default function Page() {
             <span className="hero__line hero__line--top" />
             <span className="hero__ring">
               <span>2022</span>
-              <span>2026</span>
+              <span>{new Date().getFullYear()}</span>
             </span>
             <span className="hero__line hero__line--bottom" />
           </div>
@@ -57,7 +57,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="container">
+          {/* <div className="container">
             <dl className="stats">
               {STATS.map((s) => (
                 <div key={s.label} className="stats__item">
@@ -66,7 +66,7 @@ export default function Page() {
                 </div>
               ))}
             </dl>
-          </div>
+          </div> */}
         </section>
 
         {/* ───────────── ABOUT ───────────── */}
@@ -262,11 +262,11 @@ export default function Page() {
         {/* ───────────── CONTACT ───────────── */}
         <section id="contact" className="section section--alt contact">
           <div className="container contact__inner">
-            <Reveal className="contact__art" >
+            {/* <Reveal className="contact__art" >
               <div className="contact__pen">
                 <Image src={IMG.penTool} alt="" fill sizes="(min-width: 900px) 40vw, 60vw" />
               </div>
-            </Reveal>
+            </Reveal> */}
 
             <Reveal className="contact__copy" delay={100}>
               <p className="eyebrow">Thank you</p>

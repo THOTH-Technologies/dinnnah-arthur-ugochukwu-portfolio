@@ -123,7 +123,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero__role { margin-top: clamp(18px, 3vh, 32px); font-family: var(--display); font-weight: 700; color: var(--green); font-size: clamp(1.5rem, 3.4vw, 2.7rem); }
 .hero__lede { margin-top: 14px; max-width: 46ch; color: #bdbdbd; font-size: clamp(1rem, 1.3vw, 1.15rem); }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
-.hero__tools { display: flex; align-items: center; gap: 18px; margin-top: 40px; flex-wrap: wrap; }
+.hero__tools { display: flex; flex-direction: column; align-items: left; gap: 18px; margin-top: 40px; flex-wrap: wrap; }
 .hero__tools-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
 
 /* decorative line + ring from the original cover */
@@ -245,7 +245,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .job__points li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 8px; height: 2px; background: var(--green); }
 
 /* ───────────── Contact ───────────── */
-.contact__inner { display: grid; gap: clamp(32px, 5vw, 72px); align-items: center; }
+/* .contact__inner { display: grid; gap: clamp(32px, 5vw, 72px); align-items: center; } */
 @media (min-width: 900px) { .contact__inner { grid-template-columns: 0.8fr 1.2fr; } }
 .contact__pen { position: relative; width: min(100%, 460px); aspect-ratio: 645 / 669; margin-inline: auto; }
 .contact__pen img { object-fit: contain; }

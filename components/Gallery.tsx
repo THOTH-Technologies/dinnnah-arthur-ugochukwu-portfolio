@@ -46,23 +46,24 @@ export default function Gallery({ items }: { items: WorkItem[] }) {
             key={item.src}
             type="button"
             className="tile"
-            aria-label={`View ${item.title}`}
+            aria-label={item.title ? `View ${item.title}` : `View image ${i + 1}`}
             onClick={(e) => {
               opener.current = e.currentTarget;
               setActive(i);
             }}
           >
-            <span className="tile__frame" style={{ aspectRatio: item.ratio }}>
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                sizes="(min-width: 980px) 33vw, (min-width: 560px) 50vw, 100vw"
-              />
-            </span>
+            <Image
+              src={item.src}
+              alt={item.alt}
+              width={0}
+              height={0}
+              sizes="(min-width: 980px) 33vw, (min-width: 560px) 50vw, 100vw"
+              className="tile__img"
+              style={{ width: "100%", height: "auto" }}
+            />
             <span className="tile__cap">
               <span className="tile__tag">{item.tag}</span>
-              <span className="tile__title">{item.title}</span>
+              {item.title && <span className="tile__title">{item.title}</span>}
             </span>
           </button>
         ))}
@@ -73,7 +74,7 @@ export default function Gallery({ items }: { items: WorkItem[] }) {
           className="lightbox"
           role="dialog"
           aria-modal="true"
-          aria-label={current.title}
+          aria-label={current.title || "Image preview"}
           onClick={close}
         >
           <button
@@ -100,7 +101,8 @@ export default function Gallery({ items }: { items: WorkItem[] }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={current.src} alt={current.alt} />
             <figcaption>
-              <span className="tile__tag">{current.tag}</span> {current.title}
+              <span className="tile__tag">{current.tag}</span>
+              {current.title && ` ${current.title}`}
             </figcaption>
           </figure>
           <button
